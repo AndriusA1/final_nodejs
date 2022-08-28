@@ -22,7 +22,7 @@ module.exports = {
     }
 
     if (req.body.passOne.length !== req.body.passTwo.length) {
-      errors.push("Passwords mismastch");
+      errors.push("Passwords mismatch");
     }
 
     if (errors.length > 0) {
@@ -30,7 +30,7 @@ module.exports = {
       return;
     }
 
-    var shasum = crypto.createHash('sha1');
+    const shasum = crypto.createHash('sha1');
     shasum.update(req.body.passOne);
 
     const user = new userSchema();
@@ -41,6 +41,6 @@ module.exports = {
     user.yearsOld = req.body.yearsOld;
     await user.save();
 
-    res.send({ message: "OK"});
+    res.send({ message: "all good"});
   },
 };

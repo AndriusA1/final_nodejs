@@ -3,6 +3,7 @@ const app = express();
 const nid = require("nid");
 const cors = require("cors");
 const mongoose = require("mongoose");
+
 mongoose
   .connect(
     "mongodb+srv://Admin:Vilnius@cluster0.ptxlm.mongodb.net/?retryWrites=true&w=majority"
